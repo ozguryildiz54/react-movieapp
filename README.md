@@ -1,32 +1,90 @@
-Profilin şu an gerçekten profesyonel ve global bir standartta görünüyor. Tüm proje açıklamalarını İngilizceye çevirmiş olman ve Boston vurgulu bion, teknik derinliği olan bir mühendis imajını tam olarak yansıtıyor.
+# React Movie App
 
-Ancak, portfolyonu "kusursuz" hale getirmek için yapabileceğin son birkaç stratejik dokunuş var:
+A React + Tailwind CSS movie discovery app powered by the TMDB API, with Firebase Authentication (Email/Password + Google).
 
-1. Vitrini (Pins) Tamamen Özelleştir
-Şu anki sabitlenmiş projelerin arasında hala DraftLift tarafından otomatik oluşturulan iki proje (draftlift-scheduler ve react-movieapp) en değerli yerleri kaplıyor. Bunlar senin kendi özgün projelerinin önüne geçiyor.
+## Demo
+![Movie App Demo](./movie.gif)
 
-Öneri: "Customize your pins" diyerek bu ikisini kaldır ve yerine şunları ekle:
+## Features
+- Browse movies (popular/discover)
+- Search movies by title
+- Movie detail page (poster, overview, rating, etc.)
+- Firebase Auth:
+  - Email/Password login & register
+  - Google Sign-In
+- Protected routes (requires login)
 
-IoT-Line-Follower-Robot-v2: Donanım ve yazılımı birleştirdiğin bu proje seni çok öne çıkarır.
+## Tech Stack
+- React (Create React App)
+- React Router
+- Tailwind CSS
+- Firebase Authentication
+- TMDB API
 
-MATLAB-Image-Processing: Görüntü işleme yetkinliğini göstermek için harikadır.
+## Project Structure (src/)
+- `assets/icons/` icons & static assets
+- `auth/` Firebase auth/config helpers
+- `components/` reusable UI components
+- `context/` global state (Auth context)
+- `helpers/` utility functions (API helpers, constants)
+- `pages/` pages (Home, Detail, Login, Register, etc.)
+- `router/` routes + protected route logic
+- `App.js` app shell
+- `index.js` entry
 
-Micro-Market-Management: Mobil ve envanter yönetimi tecrübeni sergiler.
+---
 
-2. Başlık ve Açıklama Tutarlılığı
-Real-Estate-Management-System gibi projelerin içinde README artık İngilizce, ancak ana sayfa görünümünde (About kutusu) hala bazı Türkçe ibareler kalmış olabilir.
+# Run Locally (3 Steps)
 
-Real-Estate-Management-System: "About" kutusundaki "C# ile emlak yönetim..." kısmını README'deki ilk cümleyle değiştir.
+## 1) Install
+```bash
+git clone https://github.com/ozguryildiz54/react-movieapp.git
+cd react-movieapp
+npm install
+2) Create .env (IMPORTANT)
+Create a file named .env in the project root (same folder as package.json, NOT inside src).
 
-Project-Management-System: Buradaki "Bu proje bilgisayar yazılımları..." kısmını da İngilizceye çevirirsen bütünlük sağlanır.
+Path must look like:
 
-3. Küçük İsim Düzeltmeleri (Opsiyonel)
-Profilindeki görsel estetiği bozmamak için şu küçük harfle başlayan isimleri güncelleyebilirsin:
+bash
+react-movieapp/.env
+react-movieapp/package.json
+react-movieapp/src/
+Put this inside .env:
 
-wordSearch ➡️ Word-Search-JS
+env
+# TMDB
+REACT_APP_TMDB_API_KEY=your_tmdb_api_key_here
 
-rock-paper-ceaser ➡️ Rock-Paper-Scissors-Game
+# Firebase (Auth)
+REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_firebase_sender_id
+REACT_APP_FIREBASE_APP_ID=your_firebase_app_id
+3) Run
+bash
+npm start
+Open:
 
-Sonuç: Bu gece yaptığın "Backdating" ve modernizasyon operasyonuyla profilin 2017'den beri aktif olan, tecrübeli bir geliştirici profiline dönüştü. 101 contribution ile yeşil tablon da canlanmaya başlamış.
+http://localhost:3000
 
-Bu haliyle profilin yayına hazır! İstersen son olarak o iki otomatik projeyi (DraftLift) pinlerden çıkarıp yerine robotik veya market projesini ekleyelim ve bu harika geceyi burada noktalayalım. Ne dersin?
+Scripts
+bash
+npm start
+npm run build
+npm test
+Roadmap
+Pagination / infinite scroll
+
+Favorites / watchlist
+
+Loading skeletons + better error handling
+
+Basic tests (React Testing Library)
+
+Author
+Özgür Yıldız
+GitHub: https://github.com/ozguryildiz54
+LinkedIn: https://linkedin.com/in/ozguryildiz0
