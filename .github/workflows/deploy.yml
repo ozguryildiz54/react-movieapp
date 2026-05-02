@@ -32,6 +32,7 @@ jobs:
           REACT_APP_messagingSenderId: "371979280916"
           REACT_APP_appId: "${{ secrets.REACT_APP_APPID }}"
           REACT_APP_TMDB_KEY: "${{ secrets.REACT_APP_TMDB_KEY }}"
+      - run: cp build/index.html build/404.html
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build
